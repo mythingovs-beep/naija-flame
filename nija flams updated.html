@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="NaijaFlame — Real Nigerian Fast Food in Victoria Island, Lagos"/>
+    <title>NaijaFlame 🔥 — Real Nigerian Fast Food, Lagos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <style>
+        :root{
+            --black:#080808;--surface:#111;--card:#1a1a1a;--card2:#222;
+            --gold:#D4A017;--gold2:#F0C040;--red:#8B1A1A;--red2:#C0392B;
+            --white:#F7F2EA;--muted:#7a7a7a;--border:#252525;
+            --F:Space Grotesk,sans-serif;--B:Inter,sans-serif;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{background:var(--black);color:var(--white);font-family:var(--B);overflow-x:hidden}
+        img{display:block;width:100%;object-fit:cover}
+
+        nav{
+            position:fixed;top:0;left:0;right:0;z-index:999;height:68px;
+            display:flex;align-items:center;justify-content:space-between;
+            padding:0 5%;background:rgba(8,8,8,0.95);backdrop-filter:blur(16px);
+            border-bottom:1px solid var(--border);
+        }
+        .logo{
+            font-family:var(--F);font-size:1.6rem;font-weight:800;
+            letter-spacing:-.03em;color:var(--gold);text-decoration:none;
+            display:flex;align-items:center;gap:10px;
+        }
+        .logo-img{
+            width:42px;height:42px;border-radius:8px;
+            background:var(--gold);color:var(--black);
+            display:flex;align-items:center;justify-content:center;
+            font-size:1.4rem;font-weight:900;
+        }
+        .nav-links{list-style:none;display:flex;gap:2rem;align-items:center}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+        .nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:.5rem 1.2rem;border-radius:6px;font-weight:700!important}
+
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:80px 5% 60px}
+        .hero-bg-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;filter:brightness(.28) saturate(1.2);animation:heroZoom 20s ease-in-out infinite alternate}
+        @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1.14)}}
+
+        section{padding:96px 5%}
+        .label{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+        .sec-title{font-family:var(--F);font-size:clamp(1.8rem,4vw,3.2rem);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin-bottom:.9rem}
+
+        .menu-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+        .tab{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--F);font-size:.8rem;font-weight:600;padding:.48rem 1.2rem;border-radius:100px;cursor:pointer;transition:all .2s}
+        .tab.on,.tab:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+
+        #menuSearch{width:100%;max-width:360px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:999px;color:var(--white);margin-bottom:1.5rem;font-size:1rem}
+
+        .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.6rem}
+        .mcard{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s}
+        .mcard:hover{transform:translateY(-10px);border-color:var(--gold)}
+        .mcard-img{height:200px;position:relative}
+        .mcard-img img{height:100%;transition:transform .5s ease}
+        .mcard:hover .mcard-img img{transform:scale(1.08)}
+        .badge{position:absolute;top:12px;left:12px;background:rgba(212,160,23,.95);color:#000;padding:4px 12px;border-radius:30px;font-size:0.75rem;font-weight:700}
+
+        .gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+        .gal-item{position:relative;overflow:hidden;border-radius:12px;cursor:pointer}
+        .gal-item img{height:240px;transition:transform .4s}
+        .gal-item:hover img{transform:scale(1.08)}
+    </style>
+</head>
+<body>
+
+<!-- NAV with Logo -->
+<nav>
+    <a href="#" class="logo">
+        <div class="logo-img">🔥</div>
+        Naija<em>Flame</em>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Order Now</a></li>
+    </ul>
+    <button class="hamburger" id="ham" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-bg-img"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,8,8,.85),rgba(139,26,26,.35));"></div>
+    <div style="position:relative;z-index:2;max-width:860px">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,23,.15);border:1px solid rgba(212,160,23,.4);color:var(--gold);padding:8px 16px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-bottom:1rem">🇳🇬 Victoria Island, Lagos • Open Daily</div>
+        <h1 style="font-family:var(--F);font-size:clamp(3rem,8.5vw,6.8rem);font-weight:800;line-height:0.92;letter-spacing:-.04em">
+            The <span style="color:var(--gold)">Boldest</span> Nigerian<br>Fast Food in Lagos.
+        </h1>
+        <p style="font-size:1.15rem;color:rgba(247,242,234,.8);max-width:520px;margin:1.8rem 0 2.5rem">Real taste. Real fire. Real Naija.</p>
+        <a href="#menu" style="background:var(--gold);color:#000;padding:16px 32px;border-radius:8px;font-weight:700;font-size:1.1rem;text-decoration:none;display:inline-block">View Full Menu 🔥</a>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+    <div class="label">Fresh from the Fire</div>
+    <h2 class="sec-title">Our Naija Menu</h2>
+    <input type="text" id="menuSearch" placeholder="Search jollof, suya, egusi..."/>
+    <div class="menu-tabs">
+        <button class="tab on" data-cat="all">All</button>
+        <button class="tab" data-cat="rice">🍚 Rice</button>
+        <button class="tab" data-cat="protein">🍖 Proteins</button>
+        <button class="tab" data-cat="soup">🥣 Soups</button>
+        <button class="tab" data-cat="sides">🍟 Sides</button>
+        <button class="tab" data-cat="drinks">🥤 Drinks</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:var(--surface)">
+    <div class="label">Food Looks Good Too</div>
+    <h2 class="sec-title">Gallery</h2>
+    <div class="gal-grid" id="galGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="label">Come Find Us</div>
+    <h2 class="sec-title">Visit NaijaFlame</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem">
+        <div>
+            <p style="margin-bottom:1.5rem;font-size:1.1rem">14 Balogun Street,<br>Victoria Island, Lagos</p>
+            <p><strong>Phone:</strong> <a href="tel:+2348039493147" style="color:var(--gold)">+234 803 949 3147</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348039493147" style="color:var(--gold)">+234 803 949 3147</a></p>
+            <p><strong>Email:</strong> hello@naijaflame.ng</p>
+        </div>
+        <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border);position:relative">
+            <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=800&q=80" alt="Map" style="height:340px;width:100%">
+            <div style="position:absolute;bottom:20px;left:20px;background:var(--gold);color:black;padding:10px 18px;border-radius:8px;font-weight:700">📍 Victoria Island</div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Buttons -->
+<button onclick="alert('Cart coming soon!')" style="position:fixed;bottom:90px;right:20px;background:var(--gold);color:black;border:none;padding:14px 22px;border-radius:50px;font-weight:700;z-index:1000;cursor:pointer">🛒 Cart</button>
+
+<a href="https://wa.me/2348039493147?text=Hi%20NaijaFlame%20🔥%20I'd%20like%20to%20order!" 
+   target="_blank" 
+   style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:14px 22px;border-radius:50px;font-weight:700;text-decoration:none;z-index:1000">
+   💬 WhatsApp Us
+</a>
+
+<div id="toast" style="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--gold);color:black;padding:12px 24px;border-radius:50px;font-weight:700;opacity:0;transition:all .3s;z-index:9999"></div>
+
+<script>
+// Menu Data
+const MENU = [
+    {id:1,name:"Classic Jollof Rice",desc:"Smoky party-style with fried plantain",price:2800,cat:"rice",badge:"Bestseller",img:"https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80"},
+    {id:2,name:"Nigerian Fried Rice",desc:"Loaded with vegetables & chicken",price:2600,cat:"rice",badge:"",img:"https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80"},
+    {id:3,name:"Ofada Rice & Ayamase",desc:"Native rice with spicy green pepper stew",price:3200,cat:"rice",badge:"Local Fave",img:"https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=600&q=80"},
+    {id:4,name:"Suya Platter",desc:"Spiced grilled beef with yaji spice",price:2400,cat:"protein",badge:"🌶 Spicy",img:"https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80"},
+    {id:5,name:"Peppered Chicken",desc:"Crispy chicken in rich pepper sauce",price:3500,cat:"protein",badge:"Signature",img:"https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=600&q=80"},
+    {id:6,name:"Asun (Peppered Goat)",desc:"Smoky grilled goat meat",price:4200,cat:"protein",badge:"Premium",img:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80"},
+    {id:7,name:"Grilled Tilapia",desc:"Whole fish peppered & grilled",price:3800,cat:"protein",badge:"",img:"https://images.unsplash.com/photo-1546833999-8feaff55ab30?auto=format&fit=crop&w=600&q=80"},
+    {id:8,name:"Egusi Soup",desc:"Melon seed soup with ugu & protein",price:2900,cat:"soup",badge:"",img:"https://images.unsplash.com/photo-1600585154340-be6161a56a9c?auto=format&fit=crop&w=600&q=80"},
+    {id:9,name:"Ogbono Soup",desc:"Draw soup with assorted meat",price:3100,cat:"soup",badge:"",img:"https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80"},
+    {id:10,name:"Catfish Pepper Soup",desc:"Hot spicy catfish pepper soup",price:2800,cat:"soup",badge:"Hot",img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80"},
+    {id:11,name:"Puff Puff (8pcs)",desc:"Golden sweet fried dough",price:1200,cat:"sides",badge:"Classic",img:"https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80"},
+    {id:12,name:"Fried Plantain (Dodo)",desc:"Sweet ripe plantain slices",price:900,cat:"sides",badge:"",img:"https://images.unsplash.com/photo-1601001815894-4bb6c828f96b?auto=format&fit=crop&w=600&q=80"},
+    {id:13,name:"Zobo Drink",desc:"Hibiscus, ginger & pineapple",price:600,cat:"drinks",badge:"",img:"https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=600&q=80"},
+    {id:14,name:"Chapman",desc:"Classic Nigerian mocktail",price:900,cat:"drinks",badge:"Party",img:"https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=600&q=80"}
+];
+
+const GALLERY = [
+    "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a9c?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+];
+
+let cart = {};
+let currentCat = 'all';
+let searchTerm = '';
+
+function renderMenu() {
+    const grid = document.getElementById('menuGrid');
+    let items = MENU.filter(item => {
+        if (currentCat !== 'all' && item.cat !== currentCat) return false;
+        if (searchTerm && !item.name.toLowerCase().includes(searchTerm) && !item.desc.toLowerCase().includes(searchTerm)) return false;
+        return true;
+    });
+
+    grid.innerHTML = items.map(item => `
+        <div class="mcard">
+            <div class="mcard-img">
+                <img src="${item.img}" alt="${item.name}" loading="lazy">
+                ${item.badge ? `<div class="badge">${item.badge}</div>` : ''}
+            </div>
+            <div class="mcard-body">
+                <div class="mcard-name">${item.name}</div>
+                <div style="color:var(--muted);margin-bottom:12px">${item.desc}</div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <span class="price">₦${item.price.toLocaleString()}</span>
+                    <button class="add-btn" onclick="addToCart(${item.id})">Add</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderGallery() {
+    const container = document.getElementById('galGrid');
+    container.innerHTML = GALLERY.map(src => `
+        <div class="gal-item"><img src="${src}" alt="NaijaFlame Dish" loading="lazy"></div>
+    `).join('');
+}
+
+function addToCart(id) {
+    cart[id] = (cart[id] || 0) + 1;
+    showToast("✅ Added to cart");
+}
+
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.opacity = '1';
+    setTimeout(() => t.style.opacity = '0', 2200);
+}
+
+// Initialize
+renderMenu();
+renderGallery();
+
+document.getElementById('menuSearch').addEventListener('input', e => {
+    searchTerm = e.target.value.toLowerCase();
+    renderMenu();
+});
+
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+        tab.classList.add('on');
+        currentCat = tab.dataset.cat;
+        renderMenu();
+    });
+});
+
+document.getElementById('ham').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('on');
+});
+</script>
+</body>
+</html>
